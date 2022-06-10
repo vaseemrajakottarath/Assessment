@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 # from AcmeSupport.user import forms
 from user.models import User,Department
 from user.forms import RegistrationForms
+from .forms import TicketForm
 
 # Create your views here.
 
@@ -108,3 +109,10 @@ def delete_department(request,pk):
         department.delete()
         messages.success(request,"Department Deleted")
     return redirect('department')
+
+def ticket(request):
+    return render(request,'ticket.html')
+
+def create_ticket(request):
+    form=TicketForm()
+    return render(request,)

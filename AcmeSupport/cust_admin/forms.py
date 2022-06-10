@@ -2,14 +2,13 @@ import imp
 from django import forms
 
 class TicketForm(forms.Form):
+
     PRIORITY_CHOICES=(
-    
     ('Urgent','Urgent'),
-    ('Medium','Medium')
+    ('Medium','Medium'),
     ('low','low'),
     )
-
-    subject=forms.CharField(widget=forms.textarea(attrs={
+    subject=forms.CharField(widget=forms.Textarea(attrs={
         'class':'form-control col-12 mb-3',
         'row':'5',
         'placeholder':'subject',
